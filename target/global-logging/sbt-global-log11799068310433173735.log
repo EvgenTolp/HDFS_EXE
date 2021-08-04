@@ -1,0 +1,158 @@
+[debug] > Exec(;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/user/AppData/Local/Temp/sbt-structure.xml; session clear-all ; set ideaPort in Global := 58289, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.5.5 (Oracle Corporation Java 16.0.1)
+[debug]       Load.loadUnit: plugins took 40.5888ms
+[debug]       Load.loadUnit: defsScala took 0.0062ms
+[debug] [Loading] Scanning directory C:\Users\user\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\user\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.3471 ms
+[debug]           Load.resolveProject(global-plugins) took 1.1628ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\user\.sbt\1.0\plugins, plugins: List(<none>))) took 2.8591ms
+[debug] [Loading] Done in C:\Users\user\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 3.9451ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.0067ms
+[debug]     Load.loadUnit(file:/C:/Users/user/.sbt/1.0/plugins/, ...) took 50.5687ms
+[debug]   Load.apply: load took 51.7455ms
+[debug]   Load.apply: resolveProjects took 0.1171ms
+[debug]   Load.apply: finalTransforms took 6.0938ms
+[debug]   Load.apply: config.delegates took 0.3601ms
+[debug]   Load.apply: Def.make(settings)... took 60.6894ms
+[debug]   Load.apply: structureIndex took 22.9145ms
+[debug]   Load.apply: mkStreams took 0.0048ms
+[info] loading global plugins from C:\Users\user\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Forcing garbage collection...
+[debug] Load.defaultLoad until apply took 606.5106ms
+[debug]           Load.loadUnit: plugins took 37.6334ms
+[debug]           Load.loadUnit: defsScala took 0.0043ms
+[debug] [Loading] Scanning directory C:\Users\user\HDFS\project
+[debug]             Load.loadUnit: mkEval took 0.4663ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\user\HDFS\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.3848 ms
+[info] loading settings for project hdfs-build from idea1.sbt ...
+[debug]               Load.resolveProject(hdfs-build) took 2.0488ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id hdfs-build, base: C:\Users\user\HDFS\project, plugins: List(<none>))) took 3.9793ms
+[debug] [Loading] Done in C:\Users\user\HDFS\project, returning: (hdfs-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 26.8025ms
+[debug]           Load.loadUnit: cleanEvalClasses took 4.59ms
+[debug]         Load.loadUnit(file:/C:/Users/user/HDFS/project/, ...) took 69.7731ms
+[debug]       Load.apply: load took 71.1543ms
+[debug]       Load.apply: resolveProjects took 0.104ms
+[debug]       Load.apply: finalTransforms took 6.3834ms
+[debug]       Load.apply: config.delegates took 0.6059ms
+[debug]       Load.apply: Def.make(settings)... took 58.5827ms
+[debug]       Load.apply: structureIndex took 17.5553ms
+[debug]       Load.apply: mkStreams took 0.0033ms
+[info] loading project definition from C:\Users\user\HDFS\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 344.9772ms
+[debug]     Load.loadUnit: defsScala took 0.004ms
+[debug] [Loading] Scanning directory C:\Users\user\HDFS
+[debug]       Load.loadUnit: mkEval took 0.4258ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\user\HDFS, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 1.5169 ms
+[info] loading settings for project hdfs from build.sbt ...
+[debug]         Load.resolveProject(hdfs) took 48.4642ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id hdfs, base: C:\Users\user\HDFS, plugins: List(<none>))) took 50.8448ms
+[debug] [Loading] Done in C:\Users\user\HDFS, returning: (hdfs)
+[debug]     Load.loadUnit: loadedProjectsRaw took 717.2845ms
+[debug]     Load.loadUnit: cleanEvalClasses took 24.0765ms
+[debug]   Load.loadUnit(file:/C:/Users/user/HDFS/, ...) took 1087.1617ms
+[debug] Load.apply: load took 1088.7603ms
+[debug] Load.apply: resolveProjects took 0.1237ms
+[debug] Load.apply: finalTransforms took 17.7536ms
+[debug] Load.apply: config.delegates took 0.2744ms
+[debug] Load.apply: Def.make(settings)... took 84.206ms
+[debug] Load.apply: structureIndex took 18.4681ms
+[debug] Load.apply: mkStreams took 0.0027ms
+[warn] Discarding 1 session setting.  Use 'session save' to persist session settings.
+[info] set current project to JSON (in build file:/C:/Users/user/HDFS/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers", None, None)
+[info] Defining Global / sbtStructureOptions
+[info] The new value will be used by Global / ssOptions
+[debug] Defining 
+[debug] 	Global / sbtStructureOptions
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Global / ssOptions
+[info] Reapplying settings...
+[info] set current project to JSON (in build file:/C:/Users/user/HDFS/)
+[debug] > Exec(*/*:dumpStructureTo C:/Users/user/AppData/Local/Temp/sbt-structure.xml, None, None)
+[debug] Evaluating tasks: Global / dumpStructureTo
+[warn] sbt 0.13 shell syntax is deprecated; use slash syntax instead: Global / dumpStructureTo
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[info] Writing structure to C:\Users\user\AppData\Local\Temp\sbt-structure.xml...
+[info] Done.
+[success] Total time: 18 s, completed 3 авг. 2021 г., 14:31:27
+[debug] > Exec(session clear-all, None, None)
+[info] Reapplying settings...
+[info] set current project to JSON (in build file:/C:/Users/user/HDFS/)
+[debug] > Exec(set ideaPort in Global := 58289, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to JSON (in build file:/C:/Users/user/HDFS/)
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)

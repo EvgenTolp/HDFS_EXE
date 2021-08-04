@@ -1,0 +1,9 @@
+[debug] Packaging C:\Users\user\HDFS\target\scala-2.13\json_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	Pen$.class
+[debug] 	  C:\Users\user\HDFS\target\scala-2.13\classes\Pen$.class
+[debug] 	Pen$HDFSFileService$.class
+[debug] 	  C:\Users\user\HDFS\target\scala-2.13\classes\Pen$HDFSFileService$.class
+[debug] 	Pen.class
+[debug] 	  C:\Users\user\HDFS\target\scala-2.13\classes\Pen.class
+[debug] Done packaging.

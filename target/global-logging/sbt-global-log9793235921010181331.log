@@ -1,0 +1,9 @@
+[debug] > Exec(all {file:/C:/Users/user/HDFS/}hdfs/products {file:/C:/Users/user/HDFS/}hdfs/test:products, None, None)
+[debug] Evaluating tasks: Compile / products, Test / products
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\user\HDFS\target\scala-2.13\classes ...
+[info] done compiling
+[success] Total time: 0 s, completed 3 авг. 2021 г., 14:01:55
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)
