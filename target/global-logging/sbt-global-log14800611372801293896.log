@@ -1,0 +1,9 @@
+[debug] > Exec(assembly, None, None)
+[debug] Evaluating tasks: assembly
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] Strategy 'deduplicate' was applied to 5 files (Run the task at debug level to see details)
+[info] Strategy 'discard' was applied to 183 files (Run the task at debug level to see details)
+[info] Strategy 'filterDistinctLines' was applied to 10 files (Run the task at debug level to see details)
+[warn] Ignored unknown package option FixedTimestamp(Some(1262304000000))
+[success] Total time: 32 s, completed 5 авг. 2021 г., 10:58:30
+[debug] > Exec(idea-shell, None, None)

@@ -5,6 +5,8 @@ import java.io.InputStream
 import org.apache.hadoop.conf._
 import org.apache.hadoop.fs._
 import java.net.URI
+import java.io.{BufferedReader, FileReader}
+import scala.util.{Try, Using}
 object Pen extends App {
 
   object HDFSFileService {
@@ -27,7 +29,10 @@ object Pen extends App {
         out.write(b, 0, numBytes)
         numBytes = in.read(b)
       }
-
+      val lines: Try[Seq[String]] =
+        Using(new BufferedReader(new FileReader("file"))) { reader =>
+          Iterator.continually(reader.readLine()).takeWhile(_ != null).toSeq
+        }
     }
 
     def removeFile(filename: String): Boolean = {
