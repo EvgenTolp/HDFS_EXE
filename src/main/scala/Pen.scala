@@ -1,55 +1,66 @@
-import java.io.BufferedInputStream
-import java.io.File
-import java.io.FileInputStream
-import java.io.InputStream
-import org.apache.hadoop.conf._
+import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs._
+import org.apache.hadoop.io.IOUtils
+
 import java.net.URI
-import java.io.{BufferedReader, FileReader}
-import scala.util.{Try, Using}
-object Pen extends App {
+import scala.util.Using
 
-  object HDFSFileService {
-    private val conf = new Configuration()
-    private val hdfsCoreSitePath = new Path("core-site.xml")
-    private val hdfsHDFSSitePath = new Path("hdfs-site.xml")
+object Pen {
+  private val configuration = new Configuration()
+  private val fileSystem = FileSystem.get(new URI("hdfs://localhost:9000"), configuration)
 
-    conf.addResource(hdfsCoreSitePath)
-    conf.addResource(hdfsHDFSSitePath)
+  private val partitionFilter = new PathFilter {
+    override def accept(path: Path): Boolean = path.getName.startsWith("date=")
+  }
+  private val partFileFilter = new PathFilter {
+    override def accept(path: Path): Boolean = fileSystem.getFileStatus(path).isFile &&
+      path.getName.startsWith("part-")
+  }
 
-    private val fileSystem = FileSystem.get(new URI("hdfs://localhost:9000"), conf)
+  def compactDirectory(source: String, destination: String): Unit = {
+    fileSystem.listStatus(new Path(source), partitionFilter)
+      .map(_.getPath)
+      .foreach(partitionPath => {
+        val destinationDirectory = createFolder(destination, partitionPath.getName)
+        copyAndMerge(partitionPath, new Path(destinationDirectory, "part-0000"))
+      })
+  }
 
-    def saveFile(filepath: String): Unit = {
-      val file = new File(filepath)
-      val out = fileSystem.create(new Path(file.getName))
-      val in = new BufferedInputStream(new FileInputStream(file))
-      var b = new Array[Byte](1024)
-      var numBytes = in.read(b)
-      while (numBytes > 0) {
-        out.write(b, 0, numBytes)
-        numBytes = in.read(b)
-      }
-      val lines: Try[Seq[String]] =
-        Using(new BufferedReader(new FileReader("file"))) { reader =>
-          Iterator.continually(reader.readLine()).takeWhile(_ != null).toSeq
-        }
+  private def writeFile(outputFile: FSDataOutputStream, status: FileStatus): Unit = {
+    val inputFile = fileSystem.open(status.getPath)
+    IOUtils.copyBytes(inputFile, outputFile, configuration, false)
+    inputFile.close()
+  }
+
+  private def writeFile(outputFile: FSDataOutputStream, status: FileStatus, suffix: Char): Unit = {
+    writeFile(outputFile, status)
+    outputFile.write(suffix)
+  }
+
+  private def copyAndMerge(sourceDirectory: Path, destinationFile: Path): Unit = {
+    val statuses = fileSystem
+      .listStatus(sourceDirectory, partFileFilter)
+      .filter(_.getLen > 0)
+      .sortBy(_.getPath.getName)
+    Using(fileSystem.create(destinationFile)) {
+      outputFile =>
+        statuses
+          .zipWithIndex
+          .collect(tuple => {
+            if (tuple._2 < statuses.length - 1) {
+              writeFile(outputFile, tuple._1, '\n')
+            } else {
+              writeFile(outputFile, tuple._1)
+            }
+          })
     }
+  }
 
-    def removeFile(filename: String): Boolean = {
-      val path = new Path(filename)
-      fileSystem.delete(path, true)
+  private def createFolder(root: String, folderPath: String): Path = {
+    val path = new Path(root, folderPath)
+    if (!fileSystem.exists(path)) {
+      fileSystem.mkdirs(path)
     }
-
-    def getFile(filename: String): InputStream = {
-      val path = new Path(filename)
-      fileSystem.open(path)
-    }
-
-    def createFolder(folderPath: String): Unit = {
-      val path = new Path(folderPath)
-      if (!fileSystem.exists(path)) {
-        fileSystem.mkdirs(path)
-      }
-    }
+    path
   }
 }
